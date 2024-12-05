@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/all.min.css" />
+
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+
+  <body data-bs-spy="scroll">
+    <div class="container">
+      <div class="site-head text-center">
+        <h1 class="bookhead my-5">Bookmarker</h1>
+      </div>
+      <div class="input-section">
+        <hr />
+        <div class="d-flex justify-content-center align-items-center">
+          <i class="input-para1-icon fa-solid fa-bookmark"></i>
+          <p class="input-para1 mx-1 my-4">Bookmark your favorite sites</p>
+          <i class="input-para1-icon fa-solid fa-bookmark"></i>
+        </div>
+        <div class="two-inputs">
+          <div class="d-flex justify-content-start align-items-center mb-2">
+            <i class="fa-solid fa-bookmark"></i>
+            <label for="name" class="input-para2 mx-1 my-1">Site Name</label>
+          </div>
+          <div class="form-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Bookmark Name"
+              oninput="validateBookmark(this)"
+              id="name"
+            />
+            <div class="alerttag d-none alert alert-danger bg-warning p-1 mt-2">
+              <small>Your Name must be min 3 and max 15 characters</small>
+            </div>
+          </div>
+          <div class="d-flex justify-content-start align-items-center mb-2">
+            <i class="fa-solid fa-link"></i>
+            <label for="url" class="input-para2 mx-1 my-1">Site URL</label>
+          </div>
+          <div class="form-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Website URL"
+              oninput="validateBookmark(this)"
+              id="url"
+            />
+            <div class="alerttag d-none alert alert-danger bg-warning p-1 mt-2">
+              <small
+                >Examples:http://example.org|www.example.net|https://www.example.com</small
+              >
+            </div>
+          </div>
+          <div class="my-4 d-flex justify-content-between align-items-center">
+            <div>
+              <button
+                id="btnSubmit"
+                type="button"
+                onclick="addBookmark()"
+                class="btn btn-danger btn-lg px-5 py-1"
+              >
+                Submit
+              </button>
+              <button
+                id="btnUpdate"
+                type="button"
+                onclick="updateBookmark()"
+                class="btn btn-warning btn-lg px-5 d-none py-1"
+              >
+                Update
+              </button>
+            </div>
+            <div>
+              <input
+                type="text"
+                oninput="search(this.value)"
+                class="form-control bg-info text-black fw-bold"
+                placeholder="Search Site Name..."
+                id="search"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Website Name</th>
+            <th scope="col">Visit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody id="myData"></tbody>
+      </table>
+    </div>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7ecde;
+}
+
+.bookhead {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  font-family: "Pacifico", serif;
+  font-weight: 500;
+  line-height: 60px;
+  font-size: 50px;
+}
+
+.bookhead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 20px;
+  background-color: #fec260;
+  z-index: -1;
+  transform: translate(0, 35px);
+  transition: all 0.3s linear;
+}
+
+.bookhead:hover::before {
+  height: 30px;
+  transform: translate(0, 25px);
+}
+
+hr {
+  border-top: 3px dotted black;
+  opacity: 1;
+}
+
+.input-para1 {
+  color: transparent;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background-clip: text;
+  font-family: "Righteous", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  font-size: 25px;
+}
+.input-para1-icon {
+  color: transparent;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background-clip: text;
+  font-weight: 900;
+  line-height: 25px;
+  font-size: 25px;
+}
+
+.input-para2 {
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.btn-visit {
+  background-color: #9eb23b;
+  color: white;
+}
+
+.btn-visit:hover {
+  background-color: #8a9e23;
+  border: 1px solid #6e8018;
+  color: white;
+}
